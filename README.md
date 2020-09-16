@@ -1,10 +1,10 @@
 # Vsini by Fourier's Method
 
-© Javier Serna, Jesús Hernández.
+© Javier Serna, Jesús Hernández and ARYSO group.
 
-This is a semi-automatic tool designed to estimate the rotational velocity (vsini), using spectral lines of high resolution spectra. The code were developed in Python 3.7 and the GUI in Qt5.
+This is a semi-automatic tool designed to estimate the rotational velocity (vsini), using spectral lines of high resolution spectra. The code were developed in Python 3.7 and the GUI in Qt 5.
 
-[Hey! look at me](https://docs.google.com/presentation/d/1Cp8NaBN0EEg1mPtAIRAs3g8YdRQxtVRPUWPVnEFa0lI/edit?usp=sharing).
+[Overview](https://docs.google.com/presentation/d/1Cp8NaBN0EEg1mPtAIRAs3g8YdRQxtVRPUWPVnEFa0lI/edit?usp=sharing).
 
 ### New Features!
 
@@ -26,7 +26,7 @@ This tool is compatible with Python>2.7 on Linux, Mac y Windows. Some packages a
 
 In case of not having any dependency, we suggest to install it in this way:
 
-```sh
+```zsh
 $ sudo apt install python-pandas
 $ sudo apt install python-matplotlib
 $ sudo apt install python-tk
@@ -37,7 +37,7 @@ $ sudo apt install python-lmfit
 
 If you have an environment for Python> 2.7 (e.g, anaconda). The installation could be done in this way:
 
-```
+```zsh
 ~(env)$ pip install pandas
 ~(env)$ pip install matplotlib
 ~(env)$ pip install tk
@@ -50,7 +50,7 @@ If you have an environment for Python> 2.7 (e.g, anaconda). The installation cou
 
 Execute:
 
-```sh
+```zsh
 $ python vsini.py
 ```
 
