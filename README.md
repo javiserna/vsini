@@ -72,9 +72,9 @@ Use the “o” key and left click to zoom in the line of interest, or press "zo
 
 
 
-<img src="/home/javier/Pictures/Screenshot from 2020-08-06 18-30-17.png" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-30-17.png?token=ADW2GZ2NCEBW2W7C3BG4VPK7MGPZ2" style="zoom:80%;" />
 
-<img src="/home/javier/Pictures/Screenshot from 2020-08-06 18-30-34.png" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-30-34.png?token=ADW2GZY57FEETFLBAB2BKWS7MGP4I" style="zoom: 50%;" />
 
 
 
@@ -82,9 +82,9 @@ Use the “o” key and left click to zoom in the line of interest, or press "zo
 
 On each side of the line, press double click (A double click display a vertical red line). When it is done, the program performs a Gaussian fit to the spectra within the defined window. It computes the midwave of the line and width as 3 sigma level. These parameters are updated to the text boxes  "Line Center" and "Line Width" into the main window, once the user press "q" key.
 
-<img src="/home/javier/Desktop/lineselection.gif" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/lineselection.gif?token=ADW2GZ4KOZNTYOGAQ3MBIYC7MGP52" style="zoom: 50%;" />
 
-<img src="/home/javier/Pictures/Screenshot from 2020-08-06 18-39-58.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-39-58.png?token=ADW2GZ7V2A5VTFMR7TFHEOS7MGP7Q" style="zoom:50%;" />
 
 #### Step 3
 
