@@ -84,8 +84,6 @@ On each side of the line, press double click (A double click display a vertical 
 
 <img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/lineselection.gif?token=ADW2GZ4KOZNTYOGAQ3MBIYC7MGP52" style="zoom: 50%;" />
 
-<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-39-58.png?token=ADW2GZ7V2A5VTFMR7TFHEOS7MGP7Q" style="zoom:50%;" />
-
 #### Step 3
 
 Once the spectral line is selected, a visual inspection is necessary to check any issue  (e.g, mixed lines, bad normalization, bad pixels, telluric lines, etc.). Press "Plot Line" button, to plot the spectral line that will be use to measure vsini. 
