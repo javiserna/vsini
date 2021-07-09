@@ -69,7 +69,7 @@ The graphical interface of the program will appears
 
 <img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/fourier.png?token=ADW2GZ3M4Z46V4WHSQUX63K7MGPVA" alt="Interfaz Gráfica" style="zoom:80%;" />
 
-By default, the spectral resolution (R=22500) and limb darkening coefficient (0.6) are optimally set up to work with APOGEE spectra. These can be changed by as the user requires. 
+By default, the spectral resolution (R=42000) and limb darkening coefficient (0.6). These can be changed by as the user requires. 
 
 #### Step 1
 
