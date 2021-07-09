@@ -50,7 +50,16 @@ If you have an environment for Python> 2.7 (e.g, anaconda). The installation cou
 
 ### How to use it?
 
-Execute:
+First of all, we are going to create a folder where we will download the package:
+
+```zsh
+$ mkdir Fourier
+$ cd Fourier
+$ git clone https://github.com/javiserna/vsini
+$ cd vsini
+```
+
+and Execute:
 
 ```zsh
 $ python vsini.py
