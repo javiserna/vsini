@@ -74,7 +74,7 @@ class Ui_rotation(object):
         self.linewidth.setPlaceholderText(_translate("rotation", "Line width"))
         self.limbdarkening.setText(_translate("rotation", "0.6"))
         self.limbdarkening.setPlaceholderText(_translate("rotation", "Limb-darkening coefficient"))
-        self.resolution.setText(_translate("rotation", "42000"))
+        self.resolution.setText(_translate("rotation", "22500"))
         self.resolution.setPlaceholderText(_translate("rotation", "Spectral Resolution (R)"))
         self.resultado.setHtml(_translate("rotation", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
