@@ -8,7 +8,7 @@ This is a semi-automatic tool designed to estimate the rotational velocity (vsin
 
 [Overview](https://docs.google.com/presentation/d/1Cp8NaBN0EEg1mPtAIRAs3g8YdRQxtVRPUWPVnEFa0lI/edit?usp=sharing).
 
-### New Features!
+### Features!
 
   - Gausian Fitting is done for the spectral line of interest (Automatic selection of the center and width of the line).
 
@@ -105,7 +105,14 @@ Once it is certain that the line does not present any problem. Lets continue to 
 
 By pressing the "Run" button, vsini estimation is made. At the end, the tool plots a histogram with all random estimations of vsini. by pressing "q" key, vsini and their uncertainty is loaded at the main window. Finally, all the information is saved at the event file "Fourier.out".
 
+### Checking the Final Results
 
+Once we have finished our measurements, then close the window and execute: 
+
+```zsh
+$ python results.py
+```
+This script will organize the historial of measurements (Fourier.out) line by line for the set of spectra imported and processed by the user. Finally it will gives you a file called "results.csv" with the spectra name, vsini and vsini uncertainty.
 
 ------
 
