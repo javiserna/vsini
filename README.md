@@ -112,7 +112,7 @@ Once we have finished our measurements, then close the window and execute:
 ```zsh
 $ python results.py
 ```
-This script will organize the historial of measurements (Fourier.out) line by line for the set of spectra imported and processed by the user. Finally it will gives you a file called "results.csv" with the spectra name, vsini and vsini uncertainty.
+This script will organize the historical measurements located in the file "Fourier.out" For the set of spectra imported and the set of lines processed by the user. Finally, the user will have a file called "results.csv" with the spectra name, vsini, and vsini uncertainty.
 
 ------
 
