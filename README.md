@@ -4,7 +4,7 @@
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjaviserna%2Fvsini&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-[![DOI:10.3847/1538-4357/AC300A](http://img.shields.io/badge/DOI-10.3847/1538-4357/AC300A-6666FF.svg)](https://doi.org/10.3847/1538-4357/AC300A)
+[![DOI:10.3847/1538-4357/AC300A](http://img.shields.io/badge/DOI-10.3847/1538-4357/AC300A-blue.svg)](https://doi.org/10.3847/1538-4357/AC300A)
 
 This is a semi-automatic tool designed to estimate the rotational velocity (vsini), using spectral lines of high resolution spectra. The code were developed in Python 3.7 and the GUI in Qt 5.
 
