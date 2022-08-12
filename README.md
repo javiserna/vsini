@@ -4,8 +4,6 @@
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fjaviserna%2Fvsini&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-[![Github All Releases](https://img.shields.io/github/downloads/javiserna/vsini/total.svg)]()
-
 Please cite:
 [![DOI:10.3847/1538-4357/AC300A](https://badgen.net/badge/DOI/10.3847/1538-4357/AC300A/blue/blue)](https://doi.org/10.3847/1538-4357/AC300A)
 
@@ -24,6 +22,7 @@ This is a semi-automatic tool designed to estimate the rotational velocity (vsin
 
 This tool is compatible with Python>2.7 on Linux, Mac y Windows. Some packages are necessary for their proper operation.
 
+* git
 * Pandas
 * Matplotlib.
 * Tk
@@ -34,6 +33,7 @@ This tool is compatible with Python>2.7 on Linux, Mac y Windows. Some packages a
 In case of not having any dependency, we suggest to install it in this way:
 
 ```zsh
+$ sudo apt install git
 $ sudo apt install python-pandas
 $ sudo apt install python-matplotlib
 $ sudo apt install python-tk
