@@ -130,8 +130,8 @@ class MyApp(QtWidgets.QMainWindow, Ui_rotation):
 				pass
 
 		vsini=np.array(vsini)
-		vrot="vsini "+str(np.nanmedian(vsini))[:5]+"±"+str(np.nanmedian(np.abs(vsini-np.nanmedian(vsini))))[:4]
-		#vrot="vsini "+str(np.nanmedian(vsini))[:5]+"±"+str(np.nanstd(vsini))[:4]
+		#vrot="vsini "+str(np.nanmedian(vsini))[:5]+"±"+str(np.nanmedian(np.abs(vsini-np.nanmedian(vsini))))[:4] +"  ("+str(np.nanmedian(np.absolute(vsini - np.nanmedian(vsini)))*100/np.nanmedian(vsini))[:4]+"%)"
+		vrot="vsini "+str(np.nanmedian(vsini))[:5]+"±"+str(np.nanstd(vsini))[:4] +"  ("+str(np.nanstd(vsini)*100/np.nanmedian(vsini))[:4]+"%)"
 		self.resultado.setText(vrot)
 		plt.hist(vsini, bins="scott", facecolor='blue', alpha=0.5) #plot histogram of vsini measures
 		plt.xlabel("vsini (km/s)")
