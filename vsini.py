@@ -122,12 +122,13 @@ class MyApp(QtWidgets.QMainWindow, Ui_rotation):
 		vsini=[]
 
 		for k in range(1001):
-
-			try:
-				vsini.append(fourier.Fourier(x, y, midwave, width, dlam, epsilon))
-				self.progressBar.setValue(int(k/10.))
-			except:
-				pass
+			while True:
+				try:
+					vsini.append(fourier.Fourier(x, y, midwave, width, dlam, epsilon))
+					self.progressBar.setValue(int(k/10.))
+					break
+				except:
+					pass
 
 		vsini=np.array(vsini)
 		#vrot="vsini "+str(np.nanmedian(vsini))[:5]+"±"+str(np.nanmedian(np.abs(vsini-np.nanmedian(vsini))))[:4] +"  ("+str(np.nanmedian(np.absolute(vsini - np.nanmedian(vsini)))*100/np.nanmedian(vsini))[:4]+"%)"
