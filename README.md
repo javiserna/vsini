@@ -11,6 +11,9 @@ This is a semi-automatic tool designed to estimate the rotational velocity (vsin
 
 [Overview](https://docs.google.com/presentation/d/1Cp8NaBN0EEg1mPtAIRAs3g8YdRQxtVRPUWPVnEFa0lI/edit?usp=sharing).
 
+### TO DO
+Add a new column with the relative error in to Fourier.out
+
 ### Features!
 
   - Gausian Fitting is done for the spectral line of interest (Automatic selection of the center and width of the line).
