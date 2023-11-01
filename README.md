@@ -7,24 +7,24 @@
 Please cite:
 [![DOI:10.3847/1538-4357/AC300A](https://badgen.net/badge/DOI/10.3847/1538-4357/AC300A/blue/blue)](https://doi.org/10.3847/1538-4357/AC300A)
 
-This is a semi-automatic tool designed to estimate the rotational velocity (vsini), using spectral lines of high resolution spectra. The code were developed in Python 3.7 and the GUI in Qt 5.
+This is a semi-automatic tool designed to estimate the rotational velocity (vsini), using spectral lines of high-resolution spectra. The code was developed in Python 3.7 and the GUI in Qt 5.
 
 [Overview](https://docs.google.com/presentation/d/1Cp8NaBN0EEg1mPtAIRAs3g8YdRQxtVRPUWPVnEFa0lI/edit?usp=sharing).
 
 ### TO DO
-- Add a new column with the relative error in to Fourier.out
-- Pop up notifying error in line fitting. Suggest to choose other line or report as a not detection lines.
+- Add a new column with the relative error into Fourier.out
+- Pop-up notifying error in line fitting. Suggest choosing another line or report as a non-detection line.
 
 ### Features!
 
-  - Gausian Fitting is done for the spectral line of interest (Automatic selection of the center and width of the line).
+  - Gaussian Fitting is done for the spectral line of interest (Automatic selection of the center and width of the line).
 
-  - Automatic saving at the event file "Fourier.out".  The output file contains: (1) The name of the input file, (2) date, (3) time, (4) line midwave, (5) line width, (6) Spectral resolution, (7) Limb-Darkening coefficient, (8) vsini in km/s, (9) vsini uncertainty in km/s.
-  - Plot the histrogram of vsini measures.
+  - Automatic saving at the event file "Fourier.out".  The output file contains (1) The name of the input file, (2) date, (3) time, (4) line mid-wave, (5) line width, (6) Spectral resolution, (7) Limb-Darkening coefficient, (8) vsini in km/s, (9) vsini uncertainty in km/s.
+  - Plot the histogram of vsini measures.
 
 ### Requirements and Dependencies
 
-This tool is compatible with Python>2.7 on Linux, Mac y Windows. Some packages are necessary for their proper operation.
+This tool is compatible with Python>2.7 on Linux, Mac, and Windows. Some packages are necessary for their proper operation.
 
 * git
 * Pandas
@@ -46,7 +46,7 @@ $ sudo apt install python-pyqt5
 $ sudo apt install python-lmfit
 ```
 
-If you have an environment for Python> 2.7 (e.g, anaconda). The installation could be done in this way:
+If you have an environment for Python> 2.7 (e.g., anaconda). The installation could be done in this way:
 
 ```zsh
 ~(env)$ pip install pandas
@@ -74,21 +74,21 @@ and Execute:
 $ python vsini.py
 ```
 
-The graphical interface of the program will appears
+The graphical interface of the program will appear
 
 <img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/fourier.png?token=ADW2GZ3M4Z46V4WHSQUX63K7MGPVA" alt="Interfaz Gráfica" style="zoom:80%;" />
 
-By default, the spectral resolution (R=22500) and limb darkening coefficient (0.6). These can be changed by as the user requires. 
+By default, the spectral resolution (R=22500) and limb darkening coefficient (0.6). These can be changed as the user requires. 
 
 #### Step 1
 
-Please press the "Load" button to get the spectra. CSV format for the input file is required, two columns of information, "col1": Wavelength and "col2": Flux. (e.g, load our test spectra "spec_to_test.csv").
+Please press the "Load" button to get the spectra. CSV format for the input file is required, two columns of information, "col1": Wavelength and "col2": Flux. (e.g., load our test spectra "spec_to_test.csv").
 
 #### Step 2 (Spectral Line Selection)
 
-Press "Plot Spectrum" button to plot the input spectra. 
+Press the "Plot Spectrum" button to plot the input spectra. 
 
-Use the “o” key and left click to zoom in the line of interest, or press "zoom to rectangle" icon.
+Use the “o” key and left-click to zoom in on the line of interest, or press the "zoom to rectangle" icon.
 
 
 
@@ -100,19 +100,19 @@ Use the “o” key and left click to zoom in the line of interest, or press "zo
 
 
 
-On each side of the line, press double click (A double click display a vertical red line). When it is done, the program performs a Gaussian fit to the spectra within the defined window. It computes the midwave of the line and width as 3 sigma level. These parameters are updated to the text boxes  "Line Center" and "Line Width" into the main window, once the user press "q" key.
+On each side of the line, press double click (A double click displays a vertical red line). When it is done, the program performs a Gaussian fit to the spectra within the defined window. It computes the midwave of the line and width as 3 sigma level. These parameters are updated to the text boxes  "Line Center" and "Line Width" in the main window, once the user presses the "q" key.
 
 <img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/lineselection.gif?token=ADW2GZ4KOZNTYOGAQ3MBIYC7MGP52" style="zoom: 50%;" />
 
 #### Step 3
 
-Once the spectral line is selected, a visual inspection is necessary to check any issue  (e.g, mixed lines, bad normalization, bad pixels, telluric lines, etc.). Press "Plot Line" button, to plot the spectral line that will be use to measure vsini. 
+Once the spectral line is selected, a visual inspection is necessary to check any issue  (e.g., mixed lines, bad normalization, bad pixels, telluric lines, etc.). Press the "Plot Line" button, to plot the spectral line that will be used to measure vsini. 
 
-Once it is certain that the line does not present any problem. Lets continue to the next step (look at recommendations).
+Once it is certain that the line does not present any problem. Let's continue to the next step (look at recommendations).
 
 #### Last Step
 
-By pressing the "Run" button, vsini estimation is made. At the end, the tool plots a histogram with all random estimations of vsini. by pressing "q" key, vsini and their uncertainty is loaded at the main window. Finally, all the information is saved at the event file "Fourier.out".
+By pressing the "Run" button, vsini estimation is made. In the end, the tool plots a histogram with all random estimations of vsini. by pressing the "q" key, vsini and their uncertainty are loaded at the main window. Finally, all the information is saved in the event file "Fourier.out".
 
 ### Checking the Final Results
 
