@@ -2,8 +2,6 @@
 
 © Javier Serna, Jesús Hernández and ARYSO group.
 
-![GitHub Repo Views](https://komarev.com/ghpvc/?username=javiserna&repo=vsini&label=Repo%20Views&color=blue&style=flat)
-
 Please cite:
 [![DOI](https://img.shields.io/badge/DOI-10.3847%2F1538--4357%2FAC300A-blue)](https://doi.org/10.3847/1538-4357/AC300A)
 
