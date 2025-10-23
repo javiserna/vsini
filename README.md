@@ -2,10 +2,10 @@
 
 © Javier Serna, Jesús Hernández and ARYSO group.
 
-![Visits](https://img.shields.io/badge/visits-repo-blue)
+[![Visits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/javiserna/vsini)](https://hits.seeyoufarm.com)
 
 Please cite:
-[![DOI:10.3847/1538-4357/AC300A](https://badgen.net/badge/DOI/10.3847/1538-4357/AC300A/blue/blue)](https://doi.org/10.3847/1538-4357/AC300A)
+[![DOI](https://img.shields.io/badge/DOI-10.3847%2F1538--4357%2FAC300A-blue)](https://doi.org/10.3847/1538-4357/AC300A)
 
 This is a semi-automatic tool designed to estimate the rotational velocity (vsini), using spectral lines of high-resolution spectra. The code was developed in Python 3.7 and the GUI in Qt 5.
 
