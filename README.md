@@ -92,7 +92,7 @@ Use the “o” key and left-click to zoom in on the line of interest, or press 
 
 
 
-<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-30-17.png?token=ADW2GZ2NCEBW2W7C3BG4VPK7MGPZ2" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot_from_2020-08-06_18-30-17.png" style="zoom:80%;" />
 
 <img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-30-34.png?token=ADW2GZY57FEETFLBAB2BKWS7MGP4I" style="zoom: 50%;" />
 
