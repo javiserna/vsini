@@ -2,7 +2,7 @@
 
 © Javier Serna, Jesús Hernández and ARYSO group.
 
-[![Visits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/javiserna/vsini)](https://hits.seeyoufarm.com)
+![Visits](https://img.shields.io/badge/visits-repo-blue)
 
 Please cite:
 [![DOI:10.3847/1538-4357/AC300A](https://badgen.net/badge/DOI/10.3847/1538-4357/AC300A/blue/blue)](https://doi.org/10.3847/1538-4357/AC300A)
