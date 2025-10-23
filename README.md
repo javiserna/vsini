@@ -94,7 +94,7 @@ Use the “o” key and left-click to zoom in on the line of interest, or press 
 
 <img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot_from_2020-08-06_18-30-17.png" style="zoom:80%;" />
 
-<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot%20from%202020-08-06%2018-30-34.png?token=ADW2GZY57FEETFLBAB2BKWS7MGP4I" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/Screenshot_from_2020-08-06_18-30-34.png" style="zoom: 50%;" />
 
 
 
@@ -102,7 +102,7 @@ Use the “o” key and left-click to zoom in on the line of interest, or press 
 
 On each side of the line, press double click (A double click displays a vertical red line). When it is done, the program performs a Gaussian fit to the spectra within the defined window. It computes the midwave of the line and width as 3 sigma level. These parameters are updated to the text boxes  "Line Center" and "Line Width" in the main window, once the user presses the "q" key.
 
-<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/lineselection.gif?token=ADW2GZ4KOZNTYOGAQ3MBIYC7MGP52" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/javiserna/vsini/master/Images/lineselection.gif" style="zoom: 50%;" />
 
 #### Step 3
 
