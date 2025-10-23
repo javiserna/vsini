@@ -2,7 +2,7 @@
 
 © Javier Serna, Jesús Hernández and ARYSO group.
 
-![Visits](https://visitcount.itsvg.in/api?id=javiserna.vsini&label=Visitas%20al%20repo&pretty=true)
+![Repo Views](https://visitor-badge.glitch.me/badge?page_id=javiserna.vsini)
 
 Please cite:
 [![DOI](https://img.shields.io/badge/DOI-10.3847%2F1538--4357%2FAC300A-blue)](https://doi.org/10.3847/1538-4357/AC300A)
