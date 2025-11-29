@@ -196,36 +196,77 @@ $ python auto_vsini.py obs1.csv obs2.csv obs3.csv \
     --output Fourier_auto.out
 ```
 
-All results from all spectra will be appended to the same Fourier_auto.out file (with the file name included in each row).
+### Output Behavior
 
-Command-line options
+All results from all input spectra will be **appended** to the same `Fourier_auto.out` file  
+(with the file name included in each row so multi-epoch data can be tracked).
 
-auto_vsini.py accepts the following main options:
-	•	spectra (positional): one or more input spectra in CSV format with:
-	•	col1: wavelength (Å)
-	•	col2: flux
-	•	--epsilon (float, default: 0.6):
-Limb-darkening coefficient used by the Fourier method.
-	•	--R (float, default: 115000.0):
-Spectral resolution ( R = \lambda / \Delta\lambda ). It sets the instrumental width used internally by fourier.Fourier.
-	•	--nboot (int, default: 1001):
-Number of bootstrap calls to fourier.Fourier per line. Higher values give more robust uncertainties at the cost of longer runtime.
-	•	--window (float, default: 2.0):
-Approximate half-width (in Å) of the local spectral window around each line used for Gaussian fitting and for the Fourier analysis (internally scaled to ~6σ).
-	•	--bic-delta (float, default: 10.0):
-Threshold in ΔBIC used to reject blended lines. If the double-Gaussian model improves the BIC by more than this value (and the two components are sufficiently separated and comparable in depth), the line is flagged as a blend and rejected.
-	•	--min-depth-sigma (float, default: 3.0):
-Minimum depth of the line, in units of the local noise σ, required to accept it as a valid absorption line.
-	•	--detect-sigma (float, default: 3.0):
-Detection threshold (in σ) used when searching for candidate lines in the residual (continuum-subtracted) spectrum.
-	•	--output (str, default: Fourier_auto.out):
-Name of the ASCII output file where per-line measurements are stored. If the file already exists, new rows are appended.
-	•	--show-plots (flag):
-If set, the diagnostic figures will be shown interactively.
-	•	--save-plot (str):
-Path to save a figure with the full spectrum, the Savitzky–Golay continuum, and overplotted Gaussian fits.
-	•	--save-grid (str):
-Base path to save grid figures with accepted and rejected line fits (local windows) and additional histograms of Gaussian widths.
+---
+
+## Command-Line Options
+
+`auto_vsini.py` accepts the following main options:
+
+### Positional Arguments
+
+- **spectra**  
+  One or more input spectra in CSV format containing:
+  - `col1`: wavelength (Å)  
+  - `col2`: flux  
+
+---
+
+### Optional Arguments
+
+- **`--epsilon`** *(float, default: 0.6)*  
+  Limb-darkening coefficient used by the Fourier method.
+
+- **`--R`** *(float, default: 115000.0)*  
+  Spectral resolution \( R = \lambda / \Delta\lambda \).  
+  Sets the instrumental broadening used internally by `fourier.Fourier`.
+
+- **`--nboot`** *(int, default: 1001)*  
+  Number of bootstrap realizations of `fourier.Fourier` per line.  
+  Higher values → more robust uncertainties (slower runtime).
+
+- **`--window`** *(float, default: 2.0 Å)*  
+  Approximate half-width (in Å) of the local spectral window used for:
+  - Gaussian fitting  
+  - Fourier vsini measurement  
+  (internally scaled to ~6σ total width).
+
+- **`--bic-delta`** *(float, default: 10.0)*  
+  Threshold in ΔBIC used to reject **blended lines**.  
+  If the double-Gaussian model improves the BIC by more than this value  
+  *and* the two components are sufficiently separated and comparable in depth,  
+  the line is flagged as a blend and rejected.
+
+- **`--min-depth-sigma`** *(float, default: 3.0)*  
+  Minimum line depth (in units of local noise σ) required to accept the line.
+
+- **`--detect-sigma`** *(float, default: 3.0)*  
+  Detection threshold (in σ) applied to the residual (continuum-subtracted) spectrum.
+
+- **`--output`** *(str, default: `Fourier_auto.out`)*  
+  Name of the ASCII output file where per-line results are stored.  
+  If the file already exists, **new rows are appended**.
+
+- **`--show-plots`** *(flag)*  
+  Display diagnostic figures interactively.
+
+- **`--save-plot`** *(str)*  
+  Path for saving the full-spectrum plot, including:
+  - Savitzky–Golay pseudo-continuum  
+  - Detected lines  
+  - Overplotted Gaussian fits  
+
+- **`--save-grid`** *(str)*  
+  Base path for saving:
+  - Grid of accepted line fits  
+  - Grid of rejected line fits  
+  - Histograms of Gaussian widths  
+
+---
 
 Output from auto_vsini.py
 
