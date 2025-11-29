@@ -122,7 +122,124 @@ $ python results.py
 This script will organize the historical measurements located in the file "Fourier.out" For the set of spectra imported and the set of lines processed by the user. Finally, the user will have a file called "results.csv" with the spectra name, vsini, and vsini uncertainty.
 
 ------
+Automatic multi-line mode (auto_vsini.py)
+
+The module auto_vsini.py provides a fully automatic, command-line workflow to measure vsini from many spectral lines simultaneously in a 1D spectrum, without using the GUI.
+
+What auto_vsini.py does
+
+For each input spectrum (CSV with col1 = wavelength, col2 = flux):
+	1.	Estimates a smooth pseudo-continuum using a Savitzky–Golay filter.
+	2.	Detects absorption lines in the continuum-subtracted spectrum, based on a configurable S/N threshold.
+	3.	Extracts a local window around each candidate line and performs:
+	•	a single-Gaussian fit (line + local linear continuum),
+	•	a double-Gaussian fit (two components + local linear continuum).
+	4.	Uses the Bayesian Information Criterion (BIC) and simple morphological checks to:
+	•	reject clear blends or emission lines,
+	•	reject very narrow/unresolved lines,
+	•	reject very broad features dominated by continuum variations,
+	•	optionally reject lines in user-defined telluric bands.
+	5.	For each accepted line, calls the original Fourier method via fourier.Fourier to measure vsini, using a bootstrap approach with nboot realizations to estimate the uncertainty.
+	6.	Produces:
+	•	an ASCII file Fourier_auto.out with one row per accepted line, and
+	•	diagnostic plots (optional) of the spectrum and all line fits.
+
+This mode is especially useful for homogeneous vsini measurements across large line lists or multi-epoch datasets.
+
+Running auto_vsini.py
+Basic example (single spectrum, default parameters):
+
+```zsh
+$ python auto_vsini.py spec_to_test.csv
+```
+
+A more explicit example, similar to the internal test setup:
+
+```zsh
+$ python auto_vsini.py spec_to_test.csv \
+    --detect-sigma 3.0 \
+    --min-depth-sigma 3.0 \
+    --bic-delta 10.0 \
+    --window 3.5 \
+    --nboot 1001 \
+    --show-plots \
+    --save-plot spec_full.png \
+    --save-grid spec_grid.png
+```
+
+You can also process multiple spectra at once:
+
+```zsh
+$ python auto_vsini.py obs1.csv obs2.csv obs3.csv \
+    --detect-sigma 3.0 \
+    --min-depth-sigma 3.0 \
+    --bic-delta 10.0 \
+    --window 3.5 \
+    --nboot 1001 \
+    --output Fourier_auto.out
+```
+
+All results from all spectra will be appended to the same Fourier_auto.out file (with the file name included in each row).
+
+Command-line options
+
+auto_vsini.py accepts the following main options:
+	•	spectra (positional): one or more input spectra in CSV format with:
+	•	col1: wavelength (Å)
+	•	col2: flux
+	•	--epsilon (float, default: 0.6):
+Limb-darkening coefficient used by the Fourier method.
+	•	--R (float, default: 115000.0):
+Spectral resolution ( R = \lambda / \Delta\lambda ). It sets the instrumental width used internally by fourier.Fourier.
+	•	--nboot (int, default: 1001):
+Number of bootstrap calls to fourier.Fourier per line. Higher values give more robust uncertainties at the cost of longer runtime.
+	•	--window (float, default: 2.0):
+Approximate half-width (in Å) of the local spectral window around each line used for Gaussian fitting and for the Fourier analysis (internally scaled to ~6σ).
+	•	--bic-delta (float, default: 10.0):
+Threshold in ΔBIC used to reject blended lines. If the double-Gaussian model improves the BIC by more than this value (and the two components are sufficiently separated and comparable in depth), the line is flagged as a blend and rejected.
+	•	--min-depth-sigma (float, default: 3.0):
+Minimum depth of the line, in units of the local noise σ, required to accept it as a valid absorption line.
+	•	--detect-sigma (float, default: 3.0):
+Detection threshold (in σ) used when searching for candidate lines in the residual (continuum-subtracted) spectrum.
+	•	--output (str, default: Fourier_auto.out):
+Name of the ASCII output file where per-line measurements are stored. If the file already exists, new rows are appended.
+	•	--show-plots (flag):
+If set, the diagnostic figures will be shown interactively.
+	•	--save-plot (str):
+Path to save a figure with the full spectrum, the Savitzky–Golay continuum, and overplotted Gaussian fits.
+	•	--save-grid (str):
+Base path to save grid figures with accepted and rejected line fits (local windows) and additional histograms of Gaussian widths.
+
+Output from auto_vsini.py
+
+The script writes an ASCII file, by default:
+Fourier_auto.out
+
+with a header:
+```zsh
+#file date time lambda width R epsilon vsini vsini_err snr redchi_single delta_bic
+```
+
+and one row per accepted line containing:
+	1.	file            – spectrum file name
+	2.	date            – UTC date at run time
+	3.	time            – UTC time at run time
+	4.	lambda          – fitted line center (Å)
+	5.	width           – effective width used for Fourier analysis (Å)
+	6.	R               – spectral resolution used in the Fourier call
+	7.	epsilon         – limb-darkening coefficient
+	8.	vsini           – median vsini from the bootstrap (km/s)
+	9.	vsini_err       – standard deviation of vsini from the bootstrap (km/s)
+	10.	snr            – approximate depth S/N of the line
+	11.	redchi_single  – reduced χ² for the single-Gaussian fit
+	12.	delta_bic      – ΔBIC = BIC_single − BIC_double (diagnostic of blending)
+
+This file is intended for further statistical analysis (e.g., computing global vsini from many lines, filtering by S/N, etc.).
+
+------
 
 © Instituto de Astronomía / UNAM (Ensenada, B.C, Mexico)
+15 September 2020 – updated with auto_vsini.py automatic mode at University of Oklahoma / (Norman, OK, United States) 28 November 2025.
 
-15 September 2020
+
+
