@@ -122,29 +122,46 @@ $ python results.py
 This script will organize the historical measurements located in the file "Fourier.out" For the set of spectra imported and the set of lines processed by the user. Finally, the user will have a file called "results.csv" with the spectra name, vsini, and vsini uncertainty.
 
 ------
-### NEW! Automatic multi-line mode (auto_vsini.py) 
+## NEW! Automatic multi-line mode (auto_vsini.py) 
 
-The module auto_vsini.py provides a fully automatic, command-line workflow to measure vsini from many spectral lines simultaneously in a 1D spectrum, without using the GUI.
+The module **`auto_vsini.py`** provides a fully automatic, command-line workflow to measure **v sin i** from many spectral lines simultaneously in a 1D spectrum, **without using the GUI**.
 
-What auto_vsini.py does
+### What `auto_vsini.py` does
 
-For each input spectrum (CSV with col1 = wavelength, col2 = flux):
-	1.	Estimates a smooth pseudo-continuum using a Savitzky–Golay filter.
-	2.	Detects absorption lines in the continuum-subtracted spectrum, based on a configurable S/N threshold.
-	3.	Extracts a local window around each candidate line and performs:
-	•	a single-Gaussian fit (line + local linear continuum),
-	•	a double-Gaussian fit (two components + local linear continuum).
-	4.	Uses the Bayesian Information Criterion (BIC) and simple morphological checks to:
-	•	reject clear blends or emission lines,
-	•	reject very narrow/unresolved lines,
-	•	reject very broad features dominated by continuum variations,
-	•	optionally reject lines in user-defined telluric bands.
-	5.	For each accepted line, calls the original Fourier method via fourier.Fourier to measure vsini, using a bootstrap approach with nboot realizations to estimate the uncertainty.
-	6.	Produces:
-	•	an ASCII file Fourier_auto.out with one row per accepted line, and
-	•	diagnostic plots (optional) of the spectrum and all line fits.
+For each input spectrum (CSV with `col1 = wavelength`, `col2 = flux`), the module performs:
 
-This mode is especially useful for homogeneous vsini measurements across large line lists or multi-epoch datasets.
+1. **Continuum estimation**
+   - Computes a smooth pseudo-continuum using a Savitzky–Golay filter.
+
+2. **Line detection**
+   - Detects absorption features in the continuum-subtracted spectrum based on a configurable S/N threshold.
+
+3. **Local line modeling**
+   - Around each detected line, extracts a local window and performs:
+     - a **single-Gaussian fit** (line + linear continuum),
+     - a **double-Gaussian fit** (two components + linear continuum).
+
+4. **Model selection & quality control**
+   - Uses the Bayesian Information Criterion (BIC) plus morphological checks to:
+     - reject clear blends or emission lines,
+     - reject very narrow or unresolved features,
+     - reject overly broad structures dominated by continuum variations,
+     - optionally reject lines inside user-defined telluric bands.
+
+5. **vsini measurement**
+   - For each **accepted** line, calls the original Fourier method (`fourier.Fourier`) to measure v sin i,
+   - Estimates uncertainties using a bootstrap procedure with `nboot` realizations.
+
+6. **Output products**
+   - Generates an ASCII table `Fourier_auto.out` with one row per accepted line.
+   - Optionally produces diagnostic plots of:
+     - the full spectrum with detected lines and Gaussian fits,
+     - individual line windows (accepted and rejected),
+     - summary histograms.
+
+---
+
+This automatic mode is especially powerful for **homogeneous v sin i measurements across large line lists** or **multi-epoch datasets**, allowing consistent, unbiased, and reproducible analysis without manual line selection.
 
 Running auto_vsini.py
 Basic example (single spectrum, default parameters):
