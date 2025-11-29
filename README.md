@@ -122,7 +122,7 @@ $ python results.py
 This script will organize the historical measurements located in the file "Fourier.out" For the set of spectra imported and the set of lines processed by the user. Finally, the user will have a file called "results.csv" with the spectra name, vsini, and vsini uncertainty.
 
 ------
-Automatic multi-line mode (auto_vsini.py)
+### NEW! Automatic multi-line mode (auto_vsini.py) 
 
 The module auto_vsini.py provides a fully automatic, command-line workflow to measure vsini from many spectral lines simultaneously in a 1D spectrum, without using the GUI.
 
