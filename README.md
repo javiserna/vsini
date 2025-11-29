@@ -176,6 +176,7 @@ A more explicit example, similar to the internal test setup:
 $ python auto_vsini.py spec_to_test.csv \
     --detect-sigma 3.0 \
     --min-depth-sigma 3.0 \
+	--R 22500 \
     --bic-delta 10.0 \
     --window 3.5 \
     --nboot 1001 \
@@ -190,6 +191,7 @@ You can also process multiple spectra at once:
 $ python auto_vsini.py obs1.csv obs2.csv obs3.csv \
     --detect-sigma 3.0 \
     --min-depth-sigma 3.0 \
+	--R 22500 \
     --bic-delta 10.0 \
     --window 3.5 \
     --nboot 1001 \
@@ -221,7 +223,7 @@ All results from all input spectra will be **appended** to the same `Fourier_aut
 - **`--epsilon`** *(float, default: 0.6)*  
   Limb-darkening coefficient used by the Fourier method.
 
-- **`--R`** *(float, default: 115000.0)*  
+- **`--R`** *(float, default: 115000.0 HARPS Resolution)*  
   Spectral resolution \( R = \lambda / \Delta\lambda \).  
   Sets the instrumental broadening used internally by `fourier.Fourier`.
 
@@ -229,7 +231,7 @@ All results from all input spectra will be **appended** to the same `Fourier_aut
   Number of bootstrap realizations of `fourier.Fourier` per line.  
   Higher values → more robust uncertainties (slower runtime).
 
-- **`--window`** *(float, default: 2.0 Å)*  
+- **`--window`** *(float, default: 1.0 Å)*  
   Approximate half-width (in Å) of the local spectral window used for:
   - Gaussian fitting  
   - Fourier vsini measurement  
